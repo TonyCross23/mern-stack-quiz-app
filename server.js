@@ -10,6 +10,9 @@ const port = process.env.PORT;
 const monclient = process.env.DB_URL;
 
 // middleware
+app.use(express.json());
+
+// route
 app.use('/api/quiz',QuizRouter);
 
 app.listen(port,async(e)=> {
