@@ -2,6 +2,7 @@ import express from "express";
 import dotEnv from "dotenv";
 import mongoose from "mongoose";
 import QuizRouter from "./routes/QuizRouter.js";
+import cors from 'cors';
 
 const app = express();
 dotEnv.config();
@@ -11,6 +12,7 @@ const monclient = process.env.DB_URL;
 
 // middleware
 app.use(express.json());
+app.use(cors())
 
 // route
 app.use('/api/quiz',QuizRouter);
